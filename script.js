@@ -102,7 +102,7 @@ function renderLightbox() {
   const img = shots[activeIndex].querySelector("img");
   lightboxImage.src = img.src;
   lightboxImage.alt = img.alt;
-  lightboxCaption.textContent = `${activeGallery.dataset.gallery ? `Project ${String(activeGallery.dataset.gallery).padStart(2,"0")}` : "Project"} · Screenshot ${activeIndex + 1} / ${shots.length}`;
+  lightboxCaption.textContent = `${activeGallery.dataset.gallery ? `Project ${String(activeGallery.dataset.gallery).padStart(2, "0")}` : "Project"} · Screenshot ${activeIndex + 1} / ${shots.length}`;
 }
 
 function closeLightbox() {
@@ -132,4 +132,28 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeLightbox();
   if (e.key === "ArrowLeft") document.getElementById("lightboxPrev").click();
   if (e.key === "ArrowRight") document.getElementById("lightboxNext").click();
+});
+const cvModal = document.getElementById("cvModal");
+const viewCvBtn = document.getElementById("viewCvBtn");
+const cvClose = document.getElementById("cvClose");
+
+function openCv() {
+  cvModal?.classList.add("open");
+  cvModal?.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+}
+function closeCv() {
+  cvModal?.classList.remove("open");
+  cvModal?.setAttribute("aria-hidden", "true");
+  if (!document.getElementById("lightbox")?.classList.contains("open")) {
+    document.body.style.overflow = "";
+  }
+}
+viewCvBtn?.addEventListener("click", openCv);
+cvClose?.addEventListener("click", closeCv);
+cvModal?.addEventListener("click", (e) => {
+  if (e.target === cvModal) closeCv();
+});
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && cvModal?.classList.contains("open")) closeCv();
 });

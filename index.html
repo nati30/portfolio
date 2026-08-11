@@ -114,6 +114,32 @@ Architecture / Clean Architecture
       </div>
     </section>
 
+    <section id="profile" class="section profile-section">
+      <div class="profile-card reveal">
+        <div class="profile-photo-wrap">
+          <img src="assets/profile-image.jpg" alt="Natnahel Demissie profile picture" id="profilePhoto">
+        </div>
+        <div class="profile-copy">
+          <p class="eyebrow">PROFILE / CV</p>
+          <h2>Meet the engineer behind the systems.</h2>
+          <p>
+            Explore my professional profile and view or download my current CV.
+            The CV is hosted as a normal PDF asset, so it works directly on GitHub Pages.
+          </p>
+          <div class="hero-actions">
+            <button class="btn primary" id="viewCvBtn" type="button">View CV ↗</button>
+            <a class="btn ghost" href="assets/Senior%20Full%20Stack%20Software%20Engineer_ND%20(2).pdf"
+              download>Download CV ↓</a>
+          </div>
+          <div class="profile-meta">
+            <span>📍 Addis Ababa, Ethiopia</span>
+            <span>✉ natnahel.shd@gmail.com</span>
+            <span>10+ years experience</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="experience" class="section">
       <div class="section-heading reveal">
         <p class="eyebrow">02 / EXPERIENCE</p>
@@ -638,6 +664,24 @@ Architecture / Clean Architecture
       </div>
     </section>
   </main>
+
+  <div class="cv-modal" id="cvModal" aria-hidden="true">
+    <div class="cv-modal-panel">
+      <div class="cv-modal-top">
+        <div>
+          <p class="eyebrow">CURRICULUM VITAE</p>
+          <strong>Natnahel Demissie</strong>
+        </div>
+        <div class="cv-modal-actions">
+          <a class="btn primary" href="assets/Senior%20Full%20Stack%20Software%20Engineer_ND%20(2).pdf"
+            download>Download ↓</a>
+          <button class="cv-close" id="cvClose" type="button" aria-label="Close CV">×</button>
+        </div>
+      </div>
+      <iframe src="assets/Senior%20Full%20Stack%20Software%20Engineer_ND%20(2).pdf" title="Natnahel Demissie CV">
+      </iframe>
+    </div>
+  </div>
 
   <div class="lightbox" id="lightbox" aria-hidden="true">
     <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close screenshot">×</button>
